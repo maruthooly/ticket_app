@@ -2,7 +2,7 @@
 import express from 'express'
 import cors from 'cors'
 import 'dotenv/config';
-import db from './configs/db.js'
+import connectDB from './configs/db.js'
 import { clerkMiddleware } from '@clerk/express'
 import { serve } from "inngest/express";
 import { inngest, functions } from "./inngest/index.js"
@@ -11,7 +11,7 @@ import showRouter from './routes/showRoutes.js';
 const app = express();
 const port = 3000;
 
-await db()
+await connectDB ()
 
 //Middleware
 
